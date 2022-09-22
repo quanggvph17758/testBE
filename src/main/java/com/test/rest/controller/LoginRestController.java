@@ -19,15 +19,14 @@ public class LoginRestController {
 	@Autowired
 	UserService userSer;
 
-	
 	@PostMapping
 	public ResponseEntity<?> login(@RequestBody User u) {
-		
+
 		User user = userSer.findByEmail(u.getEmail());
 		if (user.getPassword().equals(u.getPassword())) {
 			return ResponseEntity.ok(user);
 		}
-			
+
 		return (ResponseEntity<?>) ResponseEntity.internalServerError();
 	}
 }
