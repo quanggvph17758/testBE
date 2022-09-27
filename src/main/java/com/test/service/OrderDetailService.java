@@ -5,8 +5,9 @@ import java.util.List;
 import com.test.entities.OrderDetail;
 
 public interface OrderDetailService {
-	
-	List<OrderDetail> listAll();
+
+	List<OrderDetail> listById(int id);
 
 	OrderDetail create(OrderDetail orderDetail);
+
 }

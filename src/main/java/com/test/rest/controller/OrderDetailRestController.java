@@ -2,7 +2,9 @@ package com.test.rest.controller;
 
 import java.util.List;
 
+import com.test.entities.Order;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import com.test.entities.OrderDetail;
@@ -15,16 +17,18 @@ public class OrderDetailRestController {
 	
 	@Autowired
 	OrderDetailService orderDeSer;
-	
-	@GetMapping
-	public List<OrderDetail> list() {
-
-		return orderDeSer.listAll();
-	}
 
 	@PostMapping
 	public OrderDetail create(@RequestBody OrderDetail orderDetail) {
 
 		return orderDeSer.create(orderDetail);
 	}
+
+	@GetMapping(path =  {"/{id}"})
+	public List<OrderDetail> listById(@PathVariable("id") int id) {
+
+		return orderDeSer.listById(id);
+	}
+
+
 }
