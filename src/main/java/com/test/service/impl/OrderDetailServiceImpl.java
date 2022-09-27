@@ -17,9 +17,9 @@ public class OrderDetailServiceImpl implements OrderDetailService {
 	private OrderDetailRepository orderDeRepo;
 
 	@Override
-	public List<OrderDetail> listAll() {
+	public List<OrderDetail> listById(int id) {
 
-		return orderDeRepo.findAll();
+		return orderDeRepo.findOne(id);
 	}
 
 	@Override
