@@ -50,4 +50,10 @@ public class OrderServiceImpl implements OrderService {
 
 		return o;
 	}
+
+	@Override
+	public List<Order> findByUserId(int uid) {
+
+		return orderRepo.listByUserId(uid);
+	}
 }
