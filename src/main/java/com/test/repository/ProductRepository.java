@@ -18,6 +18,6 @@ public interface ProductRepository extends Repository<Product, Integer> {
 
 	void delete(Product pro);
 	
-	@Query("select p from Product p where p.category_id.id=?1 ")
+	@Query("select p from Product p where upper(p.category_id) like upper(?1) ")
 	List<Product> findByCategoryId(int id);
 }

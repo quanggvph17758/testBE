@@ -48,4 +48,10 @@ public class OrderRestController {
 		
 		return orderSer.edit(order);
 	}
+
+	@GetMapping(path =  {"/{uid}"})
+	public List<Order> listByUserId(@PathVariable("uid") int uid) {
+
+		return orderSer.findByUserId(uid);
+	}
 }

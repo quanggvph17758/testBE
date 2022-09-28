@@ -4,15 +4,7 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -45,12 +37,12 @@ public class Order implements Serializable {
 	@Column
 	private String status;
 	
-//	@ManyToOne
-//	@JoinColumn(name = "email_user")
-//	private User email_user;
+	@ManyToOne
+	@JoinColumn(name = "user_id")
+	private User user_id;
 	
-	@Column
-	private String email_user;
+//	@Column
+//	private String user_id;
 	
 	@JsonIgnore
 	@OneToMany(mappedBy = "order_id")

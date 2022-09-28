@@ -18,4 +18,7 @@ public interface OrderRepository extends Repository<Order, Integer> {
 
 	void delete(Order order);
 
+	@Query("select o from Order o where upper(o.user_id) like upper(?1) ")
+	List<Order> listByUserId(int uid);
+
 }

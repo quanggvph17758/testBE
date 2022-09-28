@@ -48,8 +48,8 @@ public class User implements Serializable {
 	@JoinColumn(name = "role_id")
 	Role role_id;
 	
-//	@JsonIgnore
-//	@OneToMany(mappedBy = "email_user")
-//	List<Order> order;
+	@JsonIgnore
+	@OneToMany(mappedBy = "user_id")
+	List<Order> order;
 
 }
