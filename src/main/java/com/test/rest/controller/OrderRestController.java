@@ -37,7 +37,7 @@ public class OrderRestController {
 	
 	@GetMapping(path =  {"/{id}"})
 	public Order listById(@PathVariable("id") int id) {
-		
+
 		return orderSer.listById(id);
 	}
 	
@@ -47,11 +47,5 @@ public class OrderRestController {
 		order.setId(id);
 		
 		return orderSer.edit(order);
-	}
-
-	@GetMapping(path =  {"/{uid}"})
-	public List<Order> listByUserId(@PathVariable("uid") int uid) {
-
-		return orderSer.findByUserId(uid);
 	}
 }
