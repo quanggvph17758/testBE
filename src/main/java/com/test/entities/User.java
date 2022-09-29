@@ -43,6 +43,9 @@ public class User implements Serializable {
 	
 	@Column
 	private String address;
+
+	@Column
+	private int active;
 	
 	@ManyToOne
 	@JoinColumn(name = "role_id")
