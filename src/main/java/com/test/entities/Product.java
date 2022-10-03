@@ -40,6 +40,9 @@ public class Product implements Serializable {
 	
 	@Column
 	private int price;
+
+	@Column
+	private String update_user;
 	
 	@ManyToOne
 	@JoinColumn(name = "category_id")

@@ -1,15 +1,10 @@
 package com.test.entities;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -32,6 +27,17 @@ public class Category implements Serializable {
 	
 	@Column
 	private String name;
+
+	@Temporal(TemporalType.DATE)
+	@Column
+	private Date create_Date;
+
+	@Temporal(TemporalType.DATE)
+	@Column
+	private Date update_Date;
+
+	@Column
+	private String update_user;
 	
 	@JsonIgnore
 	@OneToMany(mappedBy = "category_id")
