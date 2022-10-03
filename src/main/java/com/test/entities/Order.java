@@ -40,9 +40,9 @@ public class Order implements Serializable {
 	@ManyToOne
 	@JoinColumn(name = "user_id")
 	private User user_id;
-	
-//	@Column
-//	private String user_id;
+
+	@Column
+	private String update_user;
 	
 	@JsonIgnore
 	@OneToMany(mappedBy = "order_id")
