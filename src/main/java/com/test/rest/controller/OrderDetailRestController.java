@@ -29,6 +29,4 @@ public class OrderDetailRestController {
 
 		return orderDeSer.listById(id);
 	}
-
-
 }
