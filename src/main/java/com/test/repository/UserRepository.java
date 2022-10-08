@@ -15,6 +15,7 @@ public interface UserRepository extends Repository<User, Integer> {
 
 	@Query("Select u From User u Where u.id=:id ")
 	User findOne(int id);
+
 	
 	void delete(User u);
 
