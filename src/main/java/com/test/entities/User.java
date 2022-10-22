@@ -55,8 +55,4 @@ public class User implements Serializable {
 	@OneToMany(mappedBy = "user_id")
 	List<Order> order;
 
-	@JsonIgnore
-	@OneToMany(mappedBy = "user_id")
-	List<Favourite> favourite;
-
 }

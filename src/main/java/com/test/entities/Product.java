@@ -51,9 +51,4 @@ public class Product implements Serializable {
 	@JsonIgnore
 	@OneToMany(mappedBy = "product_id")
 	List<OrderDetail> orderDetail;
-
-	@JsonIgnore
-	@OneToMany(mappedBy = "product_id")
-	List<Favourite> favourite;
-
 }
